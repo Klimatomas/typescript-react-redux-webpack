@@ -1,20 +1,26 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { createStore } from "redux";
+import '../src/styles/index.scss';
 import reducer from "./reducers/index";
 
-import { Hello } from "./components/Hello";
+import { Provider } from "react-redux";
 
-let store = createStore(reducer);
+import Routes from "./routes";
+
+
+const store = createStore(reducer);
 
 ReactDOM.render(
-  <Hello compiler="TypeScript" framework="React" />,
-  document.getElementById("example")
+  <Provider store={store}>
+    <Routes/>
+  </Provider>,
+  document.getElementById("app")
 );
 
 store.subscribe(() => {
-  console.log("%c Store state changed: ",'color: blue; font-size:25px', store.getState(), );
-})
+  console.log("%c Store state changed: ", "color: blue; font-size:25px", store.getState());
+});
 
+store.dispatch({ type: "asd" });
 
-store.dispatch({type:'asd'});

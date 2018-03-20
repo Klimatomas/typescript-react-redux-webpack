@@ -1,15 +1,40 @@
-import * as React from "react";
 
-export interface HelloProps {
+import * as React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+
+export interface IHelloProps{
   compiler: string;
   framework: string;
 }
 
-export const Hello: React.SFC<HelloProps> = (props: HelloProps) => (
-  <div className={"container"}>
-    <h3>
-      Hello from {props.compiler} and {props.framework}! Now with HMR from
-      Webpack and Redux support!
+class Hello extends React.Component<IHelloProps, {}> {
+  public render() {
+    return (
+      <div className="col-md-12 container">
+        <h3>
+          Hello from and ! Now with HMR from
+          Webpack and Redux support!
+          ++ TSLint (tslint-misc-rules)
+          ++ Prettier for formatting
+          ++ Bootstrap for styles
     </h3>
-  </div>
-);
+    <Link to="/hi">CLICK ME</Link>
+
+      </div>
+    )
+  }
+};
+
+
+const mapStateToProps = () => {
+  return {
+  };
+};
+
+const mapDispatchToProps = () => {
+  return {};
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Hello);

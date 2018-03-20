@@ -9,10 +9,10 @@ module.exports = {
   devtool: "source-map",
 
   devServer: {
-    
     filename: "bundle.js",
     publicPath: "/dist",
-    hot: true
+    hot: true,
+    historyApiFallback: true,
   },
 
   resolve: {
@@ -25,7 +25,18 @@ module.exports = {
       { test: /\.tsx?$/, loader: "ts-loader" },
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+
+      {
+        test: /\.(scss)$/,
+        use: [{
+          loader: 'style-loader', // inject CSS to page
+        }, {
+          loader: 'css-loader', // translates CSS into CommonJS modules
+        }, {
+          loader: 'sass-loader' // compiles Sass to CSS
+        }]
+      }
     ]
   },
 

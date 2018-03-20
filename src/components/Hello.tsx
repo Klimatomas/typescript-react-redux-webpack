@@ -1,9 +1,8 @@
-
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-export interface IHelloProps{
+export interface IHelloProps {
   compiler: string;
   framework: string;
 }
@@ -11,30 +10,24 @@ export interface IHelloProps{
 class Hello extends React.Component<IHelloProps, {}> {
   public render() {
     return (
-      <div className="col-md-12 container">
+      <div>
         <h3>
-          Hello from and ! Now with HMR from
-          Webpack and Redux support!
-          ++ TSLint (tslint-misc-rules)
-          ++ Prettier for formatting
-          ++ Bootstrap for styles
-    </h3>
-    <Link to="/hi">CLICK ME</Link>
-
+          Hello from and ! Now with HMR from Webpack and Redux support! ++
+          TSLint (tslint-misc-rules) ++ Prettier for formatting ++ Bootstrap for
+          styles
+        </h3>
+        <Link to="/hi">CLICK ME</Link>
       </div>
-    )
+    );
   }
-};
-
+}
 
 const mapStateToProps = () => {
-  return {
-  };
+  return {};
 };
 
 const mapDispatchToProps = () => {
   return {};
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Hello);

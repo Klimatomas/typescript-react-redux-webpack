@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test",
     "build": "webpack --mode production",
+    "start": "node server.js",
     "dev": "webpack-dev-server --hot --mode development",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
@@ -15,6 +16,7 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.5.3",
+    "express": "^4.16.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "build": "webpack --mode production",
-    "start": "webpack --mode production & node server.js",
+    "preinstall": "npm install & webpack --mode production",
     "dev": "webpack-dev-server --hot --mode development",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },

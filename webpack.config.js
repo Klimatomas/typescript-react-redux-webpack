@@ -13,8 +13,7 @@ module.exports = {
   devtool: "source-map",
 
   devServer: {
-    filename: "bundle.js",
-    publicPath: "/dist",
+    contentBase: "./dist",
     hot: true,
     historyApiFallback: true
   },

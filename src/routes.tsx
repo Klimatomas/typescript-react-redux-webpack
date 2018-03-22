@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Hello from "./components/Hello";
 import Hi from "./components/Hi";
-import Layout from "./pages/Layout";
+import Layout from "./layout/Layout";
 
 class Routes extends React.Component<{}, {}> {
   public render() {

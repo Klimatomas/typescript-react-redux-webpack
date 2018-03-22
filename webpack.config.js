@@ -7,7 +7,8 @@ module.exports = {
     path: __dirname + "/dist"
   },
   plugins: [new HtmlWebpackPlugin({
-    template: "index.html"
+    template: "index.html",
+    title: "Tomáš Klíma"
   })],
   // Enable sourcemaps for debugging webpack's output.
   devtool: "source-map",

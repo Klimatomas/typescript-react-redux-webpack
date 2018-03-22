@@ -3,13 +3,13 @@ import React = require("react");
 import { Link } from "react-router-dom";
 
 interface IHiProps {
-  name?: string;
+  name: string;
 }
 
 const Hi: SFC<IHiProps> = (props: IHiProps) => {
   return (
-    <div>
-      <h3>Hi there!</h3>
+    <div className="col">
+      <h3>Hi there! {props.name}</h3>
       <Link to="/">CLICK ME</Link>
     </div>
   );

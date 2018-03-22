@@ -3,8 +3,8 @@ import React = require("react");
 class Footer extends React.Component<{}, {}> {
   public render() {
     return (
-      <footer className="footer bg-dark text-white text-right">
-        something footer-ish
+      <footer className="row footer bg-dark text-white">
+        <div className="col-12 text-right">something footer-ish</div>
       </footer>
     );
   }

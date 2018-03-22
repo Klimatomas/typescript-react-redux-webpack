@@ -10,11 +10,11 @@ export interface IHelloProps {
 class Hello extends React.Component<IHelloProps, {}> {
   public render() {
     return (
-      <div>
+      <div className="col">
         <h3>
-          Hello from and ! Now with HMR from Webpack and Redux support! ++
-          TSLint (tslint-misc-rules) ++ Prettier for formatting ++ Bootstrap for
-          styles
+          Hello from {this.props.compiler} and {this.props.framework} ! Now with
+          HMR from Webpack and Redux support! ++ TSLint (tslint-misc-rules) ++
+          Prettier for formatting ++ Bootstrap for styles
         </h3>
         <Link to="/hi">CLICK ME</Link>
       </div>

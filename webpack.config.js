@@ -1,10 +1,14 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   entry: ["babel-polyfill", "./src/index.tsx"],
   output: {
     filename: "bundle.js",
     path: __dirname + "/dist"
   },
-
+  plugins: [new HtmlWebpackPlugin({
+    template: "index.html"
+  })],
   // Enable sourcemaps for debugging webpack's output.
   devtool: "source-map",
 
@@ -12,7 +16,7 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/dist",
     hot: true,
-    historyApiFallback: true,
+    historyApiFallback: true
   },
 
   resolve: {
@@ -29,16 +33,20 @@ module.exports = {
       // Sass handling
       {
         test: /\.(scss)$/,
-        use: [{
-          loader: 'style-loader', // inject CSS to page
-        }, {
-          loader: 'css-loader', // translates CSS into CommonJS modules
-        }, {
-          loader: 'sass-loader' // compiles Sass to CSS
-        }]
+        use: [
+          {
+            loader: "style-loader" // inject CSS to page
+          },
+          {
+            loader: "css-loader" // translates CSS into CommonJS modules
+          },
+          {
+            loader: "sass-loader" // compiles Sass to CSS
+          }
+        ]
       }
     ]
-  },
+  }
 
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.

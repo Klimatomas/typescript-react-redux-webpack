@@ -10,7 +10,7 @@ const Hi: SFC<IHiProps> = (props: IHiProps) => {
   return (
     <div>
       <h3>Hi there!</h3>
-      <Link to="/">CLIC aaaK ME</Link>
+      <Link to="/">CLICK ME</Link>
     </div>
   );
 };

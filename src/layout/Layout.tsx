@@ -5,11 +5,11 @@ import Header from "./Header";
 class Layout extends React.Component<{}, {}> {
   public render() {
     return (
-      <>
+      <div className="wrapper">
         <Header />
-        <div className="row content">{this.props.children}</div>
+        <div className="row main">{this.props.children}</div>
         <Footer />
-      </>
+      </div>
     );
   }
 }
